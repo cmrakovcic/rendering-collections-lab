@@ -23,19 +23,19 @@ RSpec.describe "orders_index_view" do
 
   end
 
-  it "renders the order partial" do
-    orders = Order.first(1)
-    assign(:orders, orders)
-    render :template => "orders/index.html.erb"
-    expect(rendered).to render_template(:partial => "orders/_order")
-  end
+  # it "renders the order partial" do
+  #   orders = Order.first(1)
+  #   assign(:orders, orders)
+  #   render :template => "orders/index.html.erb"
+  #   expect(rendered).to render_template(:partial => "orders/_order")
+  # end
 
-  it "renders the order partial using the abstract method of rendering collection" do
-    orders = Order.first(1)
-    assign(:orders, orders)
-    expect_any_instance_of(Order).to receive(:to_partial_path).and_call_original
-    render :template => "orders/index.html.erb"
-  end
+  # it "renders the order partial using the abstract method of rendering collection" do
+  #   orders = Order.first(1)
+  #   assign(:orders, orders)
+  #   expect_any_instance_of(Order).to receive(:to_partial_path).and_call_original
+  #   render :template => "orders/index.html.erb"
+  # end
 
   it "handles empty collections" do
     assign(:orders, [])
